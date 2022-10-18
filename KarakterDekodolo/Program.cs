@@ -21,11 +21,28 @@ namespace KarakterDekodolo
         private static void Feladat09()
         {
             Console.WriteLine("9. feladat: Dekódolás: ");
-            foreach (var k in szo)
+            foreach (var d in szo)
             {
-                ///TODO
+                Karakter k = bank.SingleOrDefault(k => k.Felismer(d));
+                Console.Write(k is not null ? k.Betu : '?');
             }
+            Console.Write('\n');
         }
+
+        #region LinLer-el
+        //private static void Feladat09()
+        //{
+        //    Console.WriteLine("9. feladat: Dekódolás: ");
+        //    foreach (var k in szo)
+        //    {
+        //        int i = 0;
+        //        while (i < bank.Count && !bank[i].Felismer(k)) i++;
+        //        if (i < bank.Count) Console.Write(bank[i].Betu);
+        //        else Console.Write('?');
+        //    }
+        //    Console.Write('\n');
+        //}
+        #endregion
 
         private static void Feladat07(char betu)
         {
